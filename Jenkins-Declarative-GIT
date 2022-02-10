@@ -1,9 +1,10 @@
 pipeline{
     agent any
-    
+
     environment{
-        PATH = "/opt/apache-maven-3.8.4/:$PATH"    
-    }
+        PATH = "/opt/apache-maven3.8.4/bin:$PATH"
+    }    
+    
     stages{
         stage("git Checkout"){
             steps{
@@ -17,3 +18,4 @@ pipeline{
         }
     }
 }
+
