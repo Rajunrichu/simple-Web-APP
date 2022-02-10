@@ -1,19 +1,9 @@
 pipeline{
     agent any
     stages{
-        stage("git Checkout"){
+        stage("git clone"){
             steps{
                 git branch: 'main', credentialsId: 'gitHUB-ID', url: 'https://github.com/Rajunrichu/simple-Web-APP.git'
             }
         }
-       stage("Maven Clean Build"){
-            
-               def mavenHome = tool name:"Maven-3.6.1", type: "maven"
-               def mavenCMD = "${mavenHome}/bin/mvn"
-               sh "${mavenCMD} clean package"
-            
-        }
-           
-    }
-
-}
+  }
