@@ -1,11 +1,20 @@
 pipeline{
     agent any
+    
+    environment{
+        PATH = "/opt/apache-maven-3.8.4/bin:$PATH"    
+    }
+    
     stages{
         stage("git Checkout"){
             steps{
                 git branch: 'main', credentialsId: 'gitHUB-ID', url: 'https://github.com/Rajunrichu/simple-Web-APP.git'
             }
         }
-        
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
     }
 }
