@@ -1,7 +1,11 @@
 pipeline{
     agent any
     stages{
-        stage("git clone"){
-            echo " Welcome Raj"
+        stage("Welcome 1"){
+            steps{
+                echo "Welcome to the pipeline script"
+            }
         }
-  }
+        
+    }
+}
