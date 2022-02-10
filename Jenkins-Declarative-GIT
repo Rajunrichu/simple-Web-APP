@@ -10,15 +10,7 @@ pipeline{
                 git branch: 'main', credentialsId: 'gitHUB-ID', url: 'https://github.com/Rajunrichu/simple-Web-APP.git'
             }
         }
-        stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
-            }
-        }
-        stage("Maven Build"){
+         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
             }
